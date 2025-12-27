@@ -87,8 +87,13 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       { name: 'JWT/OAuth 2.0', level: 90, category: 'security', years: 4 },
       { name: 'RBAC', level: 90, category: 'security', years: 4 },
-      { name: 'CTF Challenges', level: 75, category: 'security', years: 1 },
-      { name: 'Web Security', level: 80, category: 'security', years: 3 },
+      { name: 'Web Security (XSS, SQLi, CSRF)', level: 80, category: 'security', years: 3 },
+      { name: 'Vulnerability Exploitation', level: 75, category: 'security', years: 1 },
+      { name: 'Reverse Engineering', level: 75, category: 'security', years: 1 },
+      { name: 'Cryptography', level: 70, category: 'security', years: 1 },
+      { name: 'Network Security', level: 70, category: 'security', years: 1 },
+      { name: 'Binary Analysis', level: 70, category: 'security', years: 1 },
+      { name: 'Forensics', level: 70, category: 'security', years: 1 },
     ],
   },
 ];
