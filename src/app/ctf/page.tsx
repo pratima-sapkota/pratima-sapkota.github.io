@@ -149,17 +149,6 @@ export default function CTFPage() {
         </div>
       </motion.div>
 
-      {/* Easter egg hint */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="text-center text-text-muted text-sm font-mono"
-      >
-        <span className="text-matrix-green-dim">
-          {'// Try typing "flag{}" in the terminal below...'}
-        </span>
-      </motion.div>
     </div>
   );
 }

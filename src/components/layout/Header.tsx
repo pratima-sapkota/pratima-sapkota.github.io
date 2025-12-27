@@ -7,7 +7,6 @@ import { motion } from 'framer-motion';
 
 const navItems = [
   { href: '/', label: 'home', cmd: '~' },
-  { href: '/about', label: 'about', cmd: 'whoami' },
   { href: '/experience', label: 'experience', cmd: 'history' },
   { href: '/projects', label: 'projects', cmd: 'ls' },
   { href: '/skills', label: 'skills', cmd: 'cat' },

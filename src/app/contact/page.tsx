@@ -97,16 +97,16 @@ export default function ContactPage() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.9 + index * 0.1 }}
-            className="flex items-center gap-4 p-4 border border-matrix-green-dim
-                     hover:border-matrix-green hover:bg-matrix-green/5 transition-all group"
+            className="flex items-center gap-4 p-4 border border-matrix-green/20
+                     hover:border-matrix-green/40 hover:bg-matrix-green/5 transition-all group"
           >
-            <div className="w-12 h-12 flex items-center justify-center border border-matrix-cyan
-                          text-matrix-cyan font-mono text-lg">
+            <div className="w-12 h-12 flex items-center justify-center border border-matrix-green/20
+                          text-matrix-cyan/70 font-mono text-lg">
               {contact.icon}
             </div>
             <div className="flex-1">
               <div className="text-text-muted text-xs">{contact.label}</div>
-              <div className="text-matrix-green">{contact.value}</div>
+              <div className="text-text-primary">{contact.value}</div>
             </div>
             <div className="flex gap-2">
               <button
@@ -114,8 +114,8 @@ export default function ContactPage() {
                   contact.href.startsWith('mailto:') ? contact.value : contact.href,
                   contact.label
                 )}
-                className="px-3 py-1 text-xs border border-matrix-green-dim text-text-muted
-                         hover:border-matrix-green hover:text-matrix-green transition-all"
+                className="px-3 py-1 text-xs border border-border-subtle text-text-muted
+                         hover:border-matrix-green-dim hover:text-matrix-green/80 transition-all"
               >
                 {copied === contact.label ? 'Copied!' : 'Copy'}
               </button>
@@ -123,8 +123,8 @@ export default function ContactPage() {
                 href={contact.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-3 py-1 text-xs bg-matrix-green/10 border border-matrix-green
-                         text-matrix-green hover:bg-matrix-green hover:text-terminal-bg transition-all"
+                className="px-3 py-1 text-xs bg-matrix-green/10 border border-matrix-green-dim
+                         text-matrix-green/80 hover:bg-matrix-green/20 hover:text-matrix-green transition-all"
               >
                 {contact.action}
               </a>
@@ -176,18 +176,6 @@ export default function ContactPage() {
         <div className="text-text-muted text-sm">
           Open to opportunities | Response time: {'<'} 24 hours
         </div>
-      </motion.div>
-
-      {/* Easter egg hint */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.6 }}
-        className="mt-8 text-center text-text-muted text-xs font-mono"
-      >
-        <span className="text-matrix-green-dim">
-          {'// Psst... try "sudo hire pratima" in the terminal'}
-        </span>
       </motion.div>
     </div>
   );

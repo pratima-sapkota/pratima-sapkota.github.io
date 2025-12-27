@@ -39,7 +39,7 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     name: 'frontend',
-    icon: '< />',
+    icon: '< / >',
     skills: [
       { name: 'React', level: 80, category: 'frontend', years: 3 },
       { name: 'Flutter', level: 85, category: 'frontend', years: 3 },
