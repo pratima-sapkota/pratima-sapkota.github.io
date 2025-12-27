@@ -136,7 +136,7 @@ export default function VenturesPage() {
               transition={{ delay: 0.5 + i * 0.1 }}
               className="text-center p-3 border border-matrix-green-dim"
             >
-              <div className="text-2xl font-bold text-matrix-green">{metric.value}</div>
+              <div className="text-2xl font-bold text-matrix-cyan">{metric.value}</div>
               <div className="text-text-muted text-xs">{metric.label}</div>
             </motion.div>
           ))}

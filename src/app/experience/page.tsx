@@ -61,7 +61,7 @@ export default function ExperiencePage() {
                     <div className="flex flex-wrap items-center gap-2 mb-2 font-mono text-sm">
                       <span className="text-text-muted">{exp.id.slice(0, 7)}</span>
                       {index === 0 && (
-                        <span className="text-matrix-green/70">(HEAD -{'>'} present)</span>
+                        <span className="text-matrix-green/70">(HEAD)</span>
                       )}
                       <span className={commitColors[exp.type] || 'text-text-muted'}>
                         [{exp.type}]

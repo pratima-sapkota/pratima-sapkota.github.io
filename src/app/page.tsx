@@ -114,7 +114,7 @@ export default function Home() {
               logistics systems that processed <span className="text-matrix-cyan">35,000+ deliveries</span>.
             </p>
             <p>
-              Currently pursuing my Master&apos;s at Florida State University while building{' '}
+              Recently graduated with my Master&apos;s from Florida State University. Currently building{' '}
               <Link href="https://collegetown.ai" className="text-matrix-cyan hover:text-glow-subtle">
                 CollegeTown
               </Link>
