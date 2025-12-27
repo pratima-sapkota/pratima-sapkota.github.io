@@ -25,6 +25,9 @@ export function Header() {
     setMounted(true);
   }, []);
 
+  // Normalize pathname by removing trailing slash for comparison
+  const normalizedPathname = pathname === '/' ? '/' : pathname.replace(/\/$/, '');
+
   return (
     <header className="sticky top-0 z-50 bg-terminal-bg/95 backdrop-blur border-b border-matrix-green-dim">
       <div className="container mx-auto px-4">
@@ -43,7 +46,7 @@ export function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-1">
             {navItems.map((item) => {
-              const isActive = mounted && pathname === item.href;
+              const isActive = mounted && normalizedPathname === item.href;
               return (
                 <Link
                   key={item.href}
@@ -89,7 +92,7 @@ export function Header() {
           >
             <div className="flex flex-col gap-2">
               {navItems.map((item) => {
-                const isActive = mounted && pathname === item.href;
+                const isActive = mounted && normalizedPathname === item.href;
                 return (
                   <Link
                     key={item.href}
