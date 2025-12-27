@@ -46,20 +46,29 @@ function LogViewer({ logs, title }: { logs: LogEntry[]; title: string }) {
         <div className="terminal-dot red" />
         <div className="terminal-dot yellow" />
         <div className="terminal-dot green" />
-        <span className="text-text-muted text-sm ml-2">{title}</span>
+        <span className="text-text-muted text-sm ml-2 truncate">{title}</span>
       </div>
-      <div className="p-4 font-mono text-sm max-h-80 overflow-y-auto">
+      <div className="p-4 font-mono text-sm max-h-80 overflow-y-auto overflow-x-hidden">
         {logs.map((log, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="flex gap-2 mb-1 hover:bg-matrix-green/5 p-1 -m-1"
+            className="mb-2 sm:mb-1 hover:bg-matrix-green/5 p-1 -m-1"
           >
-            <span className="text-text-muted shrink-0">[{log.timestamp}]</span>
-            <span className={`shrink-0 ${levelColors[log.level]}`}>[{log.level}]</span>
-            <span className="text-text-secondary">{log.message}</span>
+            {/* Desktop view - single row */}
+            <div className="hidden sm:flex gap-2">
+              <span className={`shrink-0 ${levelColors[log.level]}`}>[{log.level}]</span>
+              <span className="text-text-secondary">{log.message}</span>
+            </div>
+            {/* Mobile view - stacked */}
+            <div className="sm:hidden">
+              <div className="flex items-center gap-2 mb-0.5">
+                <span className={`text-xs ${levelColors[log.level]}`}>[{log.level}]</span>
+              </div>
+              <span className="text-text-secondary text-xs">{log.message}</span>
+            </div>
           </motion.div>
         ))}
       </div>
@@ -103,9 +112,9 @@ export default function VenturesPage() {
         transition={{ delay: 0.3 }}
         className="mb-8"
       >
-        <div className="flex items-center gap-4 mb-4">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-4 mb-4">
           <div className="text-matrix-amber text-xl font-bold">01</div>
-          <div>
+          <div className="flex-1 min-w-0">
             <div className="text-matrix-green font-bold text-lg">ULPU Online</div>
             <div className="text-text-muted text-sm">E-commerce Platform | Co-Founder</div>
           </div>
@@ -113,7 +122,7 @@ export default function VenturesPage() {
             href="https://ulpuskins.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-auto text-matrix-cyan hover:text-glow-subtle text-sm"
+            className="text-matrix-cyan hover:text-glow-subtle text-sm"
           >
             [Visit]
           </a>
@@ -149,9 +158,9 @@ export default function VenturesPage() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6 }}
       >
-        <div className="flex items-center gap-4 mb-4">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-4 mb-4">
           <div className="text-matrix-amber text-xl font-bold">02</div>
-          <div>
+          <div className="flex-1 min-w-0">
             <div className="text-matrix-green font-bold text-lg">CollegeTown</div>
             <div className="text-text-muted text-sm">AI-Powered Social Platform | Founder</div>
           </div>
@@ -159,7 +168,7 @@ export default function VenturesPage() {
             href="https://collegetown.ai/"
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-auto text-matrix-cyan hover:text-glow-subtle text-sm"
+            className="text-matrix-cyan hover:text-glow-subtle text-sm"
           >
             [Visit]
           </a>

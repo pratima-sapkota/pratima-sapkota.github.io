@@ -10,7 +10,7 @@ const navItems = [
   { href: '/experience', label: 'experience', cmd: 'history' },
   { href: '/projects', label: 'projects', cmd: 'ls' },
   { href: '/skills', label: 'skills', cmd: 'cat' },
-  { href: '/ctf', label: 'ctf', cmd: './hack' },
+  { href: '/community', label: 'community', cmd: 'contrib' },
   { href: '/ventures', label: 'ventures', cmd: 'log' },
   { href: '/contact', label: 'contact', cmd: 'ping' },
 ];

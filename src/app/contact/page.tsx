@@ -97,76 +97,84 @@ export default function ContactPage() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.9 + index * 0.1 }}
-            className="flex items-center gap-4 p-4 border border-matrix-green/20
+            className="p-4 border border-matrix-green/20
                      hover:border-matrix-green/40 hover:bg-matrix-green/5 transition-all group"
           >
-            <div className="w-12 h-12 flex items-center justify-center border border-matrix-green/20
-                          text-matrix-cyan/70 font-mono text-lg">
-              {contact.icon}
+            {/* Desktop layout */}
+            <div className="hidden sm:flex items-center gap-4">
+              <div className="w-12 h-12 flex items-center justify-center border border-matrix-green/20
+                            text-matrix-cyan/70 font-mono text-lg shrink-0">
+                {contact.icon}
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="text-text-muted text-xs">{contact.label}</div>
+                <div className="text-text-primary truncate">{contact.value}</div>
+              </div>
+              <div className="flex gap-2 shrink-0">
+                <button
+                  onClick={() => copyToClipboard(
+                    contact.href.startsWith('mailto:') ? contact.value : contact.href,
+                    contact.label
+                  )}
+                  className="px-3 py-1 text-xs border border-border-subtle text-text-muted
+                           hover:border-matrix-green-dim hover:text-matrix-green/80 transition-all"
+                >
+                  {copied === contact.label ? 'Copied!' : 'Copy'}
+                </button>
+                <a
+                  href={contact.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-1 text-xs bg-matrix-green/10 border border-matrix-green-dim
+                           text-matrix-green/80 hover:bg-matrix-green/20 hover:text-matrix-green transition-all"
+                >
+                  {contact.action}
+                </a>
+              </div>
             </div>
-            <div className="flex-1">
-              <div className="text-text-muted text-xs">{contact.label}</div>
-              <div className="text-text-primary">{contact.value}</div>
-            </div>
-            <div className="flex gap-2">
-              <button
-                onClick={() => copyToClipboard(
-                  contact.href.startsWith('mailto:') ? contact.value : contact.href,
-                  contact.label
-                )}
-                className="px-3 py-1 text-xs border border-border-subtle text-text-muted
-                         hover:border-matrix-green-dim hover:text-matrix-green/80 transition-all"
-              >
-                {copied === contact.label ? 'Copied!' : 'Copy'}
-              </button>
-              <a
-                href={contact.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-3 py-1 text-xs bg-matrix-green/10 border border-matrix-green-dim
-                         text-matrix-green/80 hover:bg-matrix-green/20 hover:text-matrix-green transition-all"
-              >
-                {contact.action}
-              </a>
+            {/* Mobile layout */}
+            <div className="sm:hidden">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 flex items-center justify-center border border-matrix-green/20
+                              text-matrix-cyan/70 font-mono text-sm shrink-0">
+                  {contact.icon}
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="text-text-muted text-xs">{contact.label}</div>
+                  <div className="text-text-primary text-sm truncate">{contact.value}</div>
+                </div>
+              </div>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => copyToClipboard(
+                    contact.href.startsWith('mailto:') ? contact.value : contact.href,
+                    contact.label
+                  )}
+                  className="flex-1 px-3 py-2 text-xs border border-border-subtle text-text-muted
+                           hover:border-matrix-green-dim hover:text-matrix-green/80 transition-all"
+                >
+                  {copied === contact.label ? 'Copied!' : 'Copy'}
+                </button>
+                <a
+                  href={contact.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 px-3 py-2 text-xs text-center bg-matrix-green/10 border border-matrix-green-dim
+                           text-matrix-green/80 hover:bg-matrix-green/20 hover:text-matrix-green transition-all"
+                >
+                  {contact.action}
+                </a>
+              </div>
             </div>
           </motion.div>
         ))}
-      </motion.div>
-
-      {/* Traceroute */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="mb-8"
-      >
-        <div className="text-matrix-amber mb-4">$ traceroute collaboration</div>
-        <div className="terminal-window">
-          <div className="p-4 font-mono text-sm space-y-2">
-            <div className="flex items-center gap-4">
-              <span className="text-matrix-cyan w-8">1</span>
-              <span className="text-text-secondary">Initial Contact</span>
-              <span className="text-text-muted">→ Email or LinkedIn</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <span className="text-matrix-cyan w-8">2</span>
-              <span className="text-text-secondary">Introduction Call</span>
-              <span className="text-text-muted">→ Learn about your challenges</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <span className="text-matrix-cyan w-8">3</span>
-              <span className="text-text-secondary">Collaboration</span>
-              <span className="text-text-muted">→ Building solutions together</span>
-            </div>
-          </div>
-        </div>
       </motion.div>
 
       {/* Status */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.4 }}
+        transition={{ delay: 1.2 }}
         className="text-center p-6 border border-matrix-green"
       >
         <div className="flex items-center justify-center gap-2 mb-2">

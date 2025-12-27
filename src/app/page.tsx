@@ -72,8 +72,9 @@ export default function Home() {
             <div className="text-matrix-green text-xl mb-4 text-glow-subtle">
               pratima_sapkota
             </div>
-            <div className="text-matrix-green-dim mb-4">
-              {'─'.repeat(30)}
+            <div className="text-matrix-green-dim mb-4 overflow-hidden">
+              <span className="hidden sm:inline">{'─'.repeat(30)}</span>
+              <span className="sm:hidden">{'─'.repeat(20)}</span>
             </div>
             {neofetchData.map((item, i) => (
               <motion.div
