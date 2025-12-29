@@ -35,7 +35,7 @@ export default function CommunityPage() {
         className="mb-12"
       >
         <div className="text-matrix-amber mb-4 font-mono">
-          <span className="text-text-muted">#</span> CTF Competitions
+          <span className="text-text-muted">#</span> Participations
         </div>
 
         <div className="space-y-4">

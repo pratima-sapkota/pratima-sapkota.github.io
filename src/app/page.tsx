@@ -15,13 +15,10 @@ const asciiAvatar = `
 `;
 
 const neofetchData = [
-  { label: 'OS', value: 'Human 1.0' },
   { label: 'Host', value: 'Florida State University' },
   { label: 'Kernel', value: 'MS Computer Science (3.97 GPA)' },
   { label: 'Uptime', value: '5+ years in software engineering' },
-  { label: 'Shell', value: 'Python, TypeScript, Dart' },
   { label: 'Resolution', value: 'Problem Solver @ Any Scale' },
-  { label: 'DE', value: 'VS Code + Vim' },
   { label: 'Terminal', value: 'Building things that matter' },
 ];
 
@@ -64,7 +61,6 @@ export default function Home() {
             <pre className="ascii-art text-matrix-cyan">
               {asciiAvatar}
             </pre>
-            <div className="text-matrix-green mt-2">pratima@dev</div>
           </div>
 
           {/* System Info */}
@@ -108,14 +104,13 @@ export default function Home() {
               <span className="text-matrix-green">multi-tenant SaaS platforms</span>.
             </p>
             <p className="mb-4">
-              By day, I architect scalable REST APIs and data pipelines. By night, I hunt flags in CTF competitions
-              and explore the boundaries of AI/ML. I&apos;ve served{' '}
+              I&apos;ve served{' '}
               <span className="text-matrix-cyan">Fortune 500 clients</span>, co-founded an e-commerce platform
               handling <span className="text-matrix-cyan">1,000+ monthly orders</span>, and led teams building
               logistics systems that processed <span className="text-matrix-cyan">35,000+ deliveries</span>.
             </p>
             <p>
-              Recently graduated with my Master&apos;s from Florida State University. Currently building{' '}
+              Recently graduated with my Master&apos;s from FSU. Currently building{' '}
               <Link href="https://collegetown.ai" className="text-matrix-cyan hover:text-glow-subtle">
                 CollegeTown
               </Link>

@@ -10,6 +10,18 @@ export interface CTFAchievement {
 
 export const ctfAchievements: CTFAchievement[] = [
   {
+    id: 'fsu-spring-2025',
+    competition: 'FSU Graduate CTF',
+    organizer: 'Florida State University',
+    rank: '#5',
+    period: 'Spring 2025',
+    categories: ['Web Exploitation', 'Binary Exploitation', 'Cryptography', 'Forensics', 'Network Security'],
+    highlights: [
+      'Consistent top performer',
+      'Advanced reverse engineering challenges',
+    ],
+  },
+  {
     id: 'fsu-fall-2024',
     competition: 'FSU Graduate CTF',
     organizer: 'Florida State University',
@@ -22,15 +34,16 @@ export const ctfAchievements: CTFAchievement[] = [
     ],
   },
   {
-    id: 'fsu-spring-2025',
-    competition: 'FSU Graduate CTF',
-    organizer: 'Florida State University',
-    rank: '#5',
-    period: 'Spring 2025',
-    categories: ['Web Exploitation', 'Binary Exploitation', 'Cryptography', 'Forensics', 'Network Security'],
+    id: 'quantum-hack-2020',
+    competition: 'Quantum Hack',
+    organizer: 'Devfolio',
+    rank: 'Participant',
+    period: '2020',
+    categories: ['GIS', 'Real-Time Systems', 'Healthcare', 'Web Development'],
     highlights: [
-      'Consistent top performer',
-      'Advanced reverse engineering challenges',
+      'Biggest international Digital Hackathon of Nepal',
+      'Built Ambulance GIS System with Real-Time Traffic',
+      // 'Project: devfolio.co/projects/ambulance-gis-system-with-real-time-traffic',
     ],
   },
 ];

@@ -162,7 +162,7 @@ export default function VenturesPage() {
           <div className="text-matrix-amber text-xl font-bold">02</div>
           <div className="flex-1 min-w-0">
             <div className="text-matrix-green font-bold text-lg">CollegeTown</div>
-            <div className="text-text-muted text-sm">AI-Powered Social Platform | Founder</div>
+            <div className="text-text-muted text-sm">AI-Powered Social Platform | Co-Founder</div>
           </div>
           <a
             href="https://collegetown.ai/"
