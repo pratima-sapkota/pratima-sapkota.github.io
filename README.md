@@ -29,7 +29,7 @@ A terminal-themed portfolio website built with Next.js, featuring Matrix rain ef
 | `/experience` | Career timeline with git log styling |
 | `/projects` | Project directory listing |
 | `/skills` | Skills visualization with progress bars |
-| `/ctf` | Capture The Flag achievements |
+| `/community` | Community contributions, CTF participations & volunteering |
 | `/ventures` | Entrepreneurial journey and startups |
 | `/contact` | Contact information |
 
@@ -90,7 +90,7 @@ src/
 │   ├── experience/        # Experience page
 │   ├── projects/          # Projects page
 │   ├── skills/            # Skills page
-│   ├── ctf/               # CTF page
+│   ├── community/         # Community, CTF & volunteering page
 │   ├── ventures/          # Ventures page
 │   └── contact/           # Contact page
 ├── components/
