@@ -116,7 +116,3 @@ npm run build
 ```
 
 The site is automatically deployed via GitHub Actions on push to the `main` branch.
-
-## License
-
-MIT License
