@@ -7,8 +7,8 @@ const contactInfo = [
   {
     icon: '@',
     label: 'EMAIL',
-    value: 'sapkota.pratima97@gmail.com',
-    href: 'mailto:sapkota.pratima97@gmail.com',
+    value: 'pratimasapkotaa@gmail.com',
+    href: 'mailto:pratimasapkotaa@gmail.com',
     action: 'Send Email',
   },
   {

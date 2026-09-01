@@ -30,7 +30,6 @@ A terminal-themed portfolio website built with Next.js, featuring Matrix rain ef
 | `/projects` | Project directory listing |
 | `/skills` | Skills visualization with progress bars |
 | `/community` | Community contributions, CTF participations & volunteering |
-| `/ventures` | Entrepreneurial journey and startups |
 | `/contact` | Contact information |
 
 ## Getting Started
@@ -91,7 +90,6 @@ src/
 │   ├── projects/          # Projects page
 │   ├── skills/            # Skills page
 │   ├── community/         # Community, CTF & volunteering page
-│   ├── ventures/          # Ventures page
 │   └── contact/           # Contact page
 ├── components/
 │   ├── layout/            # Header, Footer

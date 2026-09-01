@@ -15,18 +15,17 @@ const asciiAvatar = `
 `;
 
 const neofetchData = [
-  { label: 'Host', value: 'Florida State University' },
-  { label: 'Kernel', value: 'MS Computer Science (3.97 GPA)' },
+  { label: 'Host', value: 'Backend/AI Engineer' },
+  { label: 'Kernel', value: 'MS Computer Science, Florida State University (3.97 GPA)' },
   { label: 'Uptime', value: '5+ years in software engineering' },
-  { label: 'Resolution', value: 'Problem Solver @ Any Scale' },
-  { label: 'Terminal', value: 'Building things that matter' },
+  { label: 'Resolution', value: 'Ships full products end-to-end, infra to release' },
 ];
 
 const interests = [
-  { icon: '[ ]', label: 'Capture The Flag', desc: 'Breaking things legally' },
   { icon: '{ }', label: 'Full-Stack Dev', desc: 'Building end-to-end solutions' },
   { icon: '> _', label: 'AI/ML', desc: 'RAG, RLHF, Computer Vision' },
   { icon: '$ $', label: 'Entrepreneurship', desc: 'From 0 to production' },
+  { icon: '[ ]', label: 'Capture The Flag', desc: 'Breaking things legally' },
 ];
 
 export default function Home() {
@@ -109,12 +108,20 @@ export default function Home() {
               handling <span className="text-matrix-cyan">1,000+ monthly orders</span>, and led teams building
               logistics systems that processed <span className="text-matrix-cyan">35,000+ deliveries</span>.
             </p>
+            <p className="mb-4">
+              Currently co-founding{' '}
+              <span className="text-matrix-cyan">Hintas</span>, building a microservices
+              platform that maps a business&apos;s workflows so{' '}
+              <span className="text-matrix-green">AI agents</span> can drive its software
+              autonomously &mdash; running production MCP servers, RAG pipelines and
+              per-tenant infrastructure.
+            </p>
             <p>
-              Recently graduated with my Master&apos;s from FSU. Currently building{' '}
+              Also shipped{' '}
               <Link href="https://collegetown.ai" className="text-matrix-cyan hover:text-glow-subtle">
                 CollegeTown
               </Link>
-              , an AI-powered social platform for students.
+              , an AI-powered social platform that grew to 3,000+ active users.
             </p>
           </div>
         </div>
