@@ -32,9 +32,13 @@ export const skillCategories: SkillCategory[] = [
       { name: 'Django', level: 95, category: 'backend', years: 5 },
       { name: 'FastAPI', level: 90, category: 'backend', years: 3 },
       { name: 'Flask', level: 80, category: 'backend', years: 3 },
+      { name: 'Node.js', level: 70, category: 'backend', years: 2 },
       { name: 'REST APIs', level: 95, category: 'backend', years: 5 },
       { name: 'Celery', level: 85, category: 'backend', years: 4 },
       { name: 'Redis', level: 85, category: 'backend', years: 4 },
+      { name: 'Pydantic', level: 85, category: 'backend', years: 3 },
+      { name: 'async/await', level: 85, category: 'backend', years: 3 },
+      { name: 'OpenAPI/Swagger', level: 80, category: 'backend', years: 3 },
     ],
   },
   {
@@ -55,6 +59,7 @@ export const skillCategories: SkillCategory[] = [
       { name: 'BigQuery', level: 80, category: 'databases', years: 2 },
       { name: 'Firebase', level: 85, category: 'databases', years: 3 },
       { name: 'Redis', level: 85, category: 'databases', years: 4 },
+      { name: 'Supabase', level: 75, category: 'databases', years: 1 },
     ],
   },
   {
@@ -62,9 +67,12 @@ export const skillCategories: SkillCategory[] = [
     icon: '~~~',
     skills: [
       { name: 'GCP', level: 80, category: 'cloud', years: 3 },
+      { name: 'AWS', level: 75, category: 'cloud', years: 2 },
       { name: 'Firebase', level: 85, category: 'cloud', years: 3 },
       { name: 'DigitalOcean', level: 80, category: 'cloud', years: 3 },
-      { name: 'Docker', level: 75, category: 'cloud', years: 2 },
+      { name: 'Docker', level: 80, category: 'cloud', years: 3 },
+      { name: 'Traefik', level: 75, category: 'cloud', years: 1 },
+      { name: 'Vercel', level: 80, category: 'cloud', years: 2 },
       { name: 'CI/CD', level: 85, category: 'cloud', years: 3 },
     ],
   },
@@ -73,12 +81,14 @@ export const skillCategories: SkillCategory[] = [
     icon: '@ @',
     skills: [
       { name: 'RLHF', level: 85, category: 'ai_ml', years: 2 },
-      { name: 'RAG', level: 85, category: 'ai_ml', years: 1 },
+      { name: 'RAG', level: 90, category: 'ai_ml', years: 2 },
+      { name: 'MCP', level: 85, category: 'ai_ml', years: 1 },
+      { name: 'Model Fine-Tuning', level: 80, category: 'ai_ml', years: 2 },
       { name: 'OpenCV', level: 80, category: 'ai_ml', years: 2 },
       { name: 'Keras/TensorFlow', level: 75, category: 'ai_ml', years: 2 },
       { name: 'YOLO', level: 75, category: 'ai_ml', years: 1 },
       { name: 'Prompt Engineering', level: 85, category: 'ai_ml', years: 2 },
-      { name: 'Vector Embeddings', level: 80, category: 'ai_ml', years: 1 },
+      { name: 'Vector Embeddings', level: 85, category: 'ai_ml', years: 2 },
     ],
   },
   {
@@ -94,6 +104,13 @@ export const skillCategories: SkillCategory[] = [
       { name: 'Network Security', level: 70, category: 'security', years: 1 },
       { name: 'Binary Analysis', level: 70, category: 'security', years: 1 },
       { name: 'Forensics', level: 70, category: 'security', years: 1 },
+    ],
+  },
+  {
+    name: 'payments',
+    icon: '$ $',
+    skills: [
+      { name: 'Stripe (Subscriptions, Webhooks, Billing)', level: 75, category: 'payments', years: 1 },
     ],
   },
 ];

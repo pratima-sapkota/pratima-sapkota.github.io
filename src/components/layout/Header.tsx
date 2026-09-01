@@ -2,8 +2,18 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useState, useSyncExternalStore } from 'react';
 import { motion } from 'framer-motion';
+
+const emptySubscribe = () => () => {};
+
+function useMounted() {
+  return useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false
+  );
+}
 
 const navItems = [
   { href: '/', label: 'home', cmd: '~' },
@@ -11,18 +21,13 @@ const navItems = [
   { href: '/projects', label: 'projects', cmd: 'ls' },
   { href: '/skills', label: 'skills', cmd: 'cat' },
   { href: '/community', label: 'community', cmd: 'contrib' },
-  { href: '/ventures', label: 'ventures', cmd: 'log' },
   { href: '/contact', label: 'contact', cmd: 'ping' },
 ];
 
 export function Header() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useMounted();
 
   // Normalize pathname by removing trailing slash for comparison
   const normalizedPathname = pathname === '/' ? '/' : pathname.replace(/\/$/, '');
