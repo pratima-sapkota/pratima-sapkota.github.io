@@ -3,11 +3,12 @@
 import { useEffect, useState } from 'react';
 
 export function Scanlines() {
-  const [isReducedMotion, setIsReducedMotion] = useState(false);
+  const [isReducedMotion, setIsReducedMotion] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  );
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setIsReducedMotion(mediaQuery.matches);
 
     const handleChange = (e: MediaQueryListEvent) => setIsReducedMotion(e.matches);
     mediaQuery.addEventListener('change', handleChange);

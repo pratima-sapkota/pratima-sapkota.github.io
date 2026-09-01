@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 interface TypingEffectProps {
@@ -23,17 +23,15 @@ export function TypingEffect({
   skipable = true,
 }: TypingEffectProps) {
   const [displayedText, setDisplayedText] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isComplete, setIsComplete] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(delay > 0 ? 0 : 1);
   const [isSkipped, setIsSkipped] = useState(false);
+  const hasCompletedRef = useRef(false);
 
   const fullText = Array.isArray(text) ? text.join('\n') : text;
+  const isComplete = isSkipped || currentIndex > fullText.length;
 
   useEffect(() => {
     if (isSkipped) {
-      setDisplayedText(fullText);
-      setIsComplete(true);
-      onComplete?.();
       return;
     }
 
@@ -52,22 +50,20 @@ export function TypingEffect({
       return () => clearTimeout(timeout);
     }
 
-    if (currentIndex > fullText.length && !isComplete) {
-      setIsComplete(true);
+    if (currentIndex > fullText.length && !hasCompletedRef.current) {
+      hasCompletedRef.current = true;
       onComplete?.();
     }
-  }, [currentIndex, delay, fullText, isComplete, isSkipped, onComplete, speed]);
-
-  useEffect(() => {
-    // Start typing after delay
-    if (delay === 0) {
-      setCurrentIndex(1);
-    }
-  }, [delay]);
+  }, [currentIndex, delay, fullText, isSkipped, onComplete, speed]);
 
   const handleSkip = () => {
     if (skipable && !isComplete) {
       setIsSkipped(true);
+      setDisplayedText(fullText);
+      if (!hasCompletedRef.current) {
+        hasCompletedRef.current = true;
+        onComplete?.();
+      }
     }
   };
 

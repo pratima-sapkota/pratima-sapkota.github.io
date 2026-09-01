@@ -9,12 +9,12 @@ interface MatrixRainProps {
 
 export function MatrixRain({ opacity = 0.05, speed = 33 }: MatrixRainProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [isReducedMotion, setIsReducedMotion] = useState(false);
+  const [isReducedMotion, setIsReducedMotion] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  );
 
   useEffect(() => {
-    // Check for reduced motion preference
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setIsReducedMotion(mediaQuery.matches);
 
     const handleChange = (e: MediaQueryListEvent) => setIsReducedMotion(e.matches);
     mediaQuery.addEventListener('change', handleChange);

@@ -5,6 +5,7 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
+  agentRules: false,
 };
 
 module.exports = nextConfig;
