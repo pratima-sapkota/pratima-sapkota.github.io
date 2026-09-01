@@ -10,10 +10,10 @@ export function Footer() {
           </div>
           <div className="flex items-center gap-4 font-mono text-xs">
             <a
-              href="mailto:sapkota.pratima97@gmail.com"
+              href="mailto:pratimasapkotaa@gmail.com"
               className="hover:text-matrix-green transition-colors"
             >
-              sapkota.pratima97@gmail.com
+              pratimasapkotaa@gmail.com
             </a>
           </div>
         </div>
