@@ -1,8 +1,117 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Share+Tech+Mono&display=swap')
+layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --color-matrix-green: #00ff41;
+  --color-matrix-green-dim: #0d7a0d;
+  --color-matrix-green-dark: #003b00;
+  --color-matrix-cyan: #00d4ff;
+  --color-matrix-amber: #ffb000;
+  --color-matrix-red: #ff3333;
+  --color-matrix-purple: #b794f4;
+
+  --color-terminal-bg: #0a0a0a;
+  --color-terminal-bg-light: #0d1117;
+  --color-terminal-bg-card: #121212;
+  --color-terminal-border: #1a1a1a;
+
+  --color-text-primary: #e0e0e0;
+  --color-text-secondary: #b0b0b0;
+  --color-text-muted: #707070;
+
+  --font-mono: JetBrains Mono, Fira Code, Consolas, monospace;
+  --font-display: Share Tech Mono, VT323, monospace;
+
+  --animate-blink: blink 1s step-end infinite;
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+  --animate-glitch: glitch 0.3s ease-in-out;
+  --animate-scan: scan 8s linear infinite;
+  --animate-matrix-fall: matrixFall 20s linear infinite;
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+  @keyframes glow {
+    0% {
+      text-shadow:
+        0 0 5px #00ff41,
+        0 0 10px #00ff41;
+    }
+    100% {
+      text-shadow:
+        0 0 10px #00ff41,
+        0 0 20px #00ff41,
+        0 0 30px #00ff41;
+    }
+  }
+  @keyframes glitch {
+    0% {
+      transform: translate(0);
+    }
+    20% {
+      transform: translate(-2px, 2px);
+    }
+    40% {
+      transform: translate(-2px, -2px);
+    }
+    60% {
+      transform: translate(2px, 2px);
+    }
+    80% {
+      transform: translate(2px, -2px);
+    }
+    100% {
+      transform: translate(0);
+    }
+  }
+  @keyframes scan {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+  @keyframes matrixFall {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100vh);
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+}
 
 :root {
   --primary-green: #00ff41;

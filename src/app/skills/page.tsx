@@ -53,12 +53,12 @@ export default function SkillsPage() {
                     <span className="text-text-secondary truncate pr-2">{skill.name}</span>
                     <span className="text-text-muted text-xs font-mono">{skill.level}%</span>
                   </div>
-                  <div className="h-1.5 bg-terminal-bg-light/50 overflow-hidden rounded-sm">
+                  <div className="h-1.5 bg-terminal-bg-light/50 overflow-hidden rounded-xs">
                     <motion.div
                       initial={{ width: 0 }}
                       animate={{ width: `${skill.level}%` }}
                       transition={{ delay: 0.3 + categoryIndex * 0.1 + skillIndex * 0.02, duration: 0.5 }}
-                      className="h-full bg-gradient-to-r from-text-secondary/40 via-text-secondary/60 to-text-secondary shadow-[0_0_4px_rgba(200,200,200,0.3)]"
+                      className="h-full bg-linear-to-r from-text-secondary/40 via-text-secondary/60 to-text-secondary shadow-[0_0_4px_rgba(200,200,200,0.3)]"
                     />
                   </div>
                 </motion.div>
