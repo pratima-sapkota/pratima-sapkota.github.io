@@ -33,7 +33,7 @@ export function Header() {
   const normalizedPathname = pathname === '/' ? '/' : pathname.replace(/\/$/, '');
 
   return (
-    <header className="sticky top-0 z-50 bg-terminal-bg/95 backdrop-blur border-b border-matrix-green-dim">
+    <header className="sticky top-0 z-50 bg-terminal-bg/95 backdrop-blur-sm border-b border-matrix-green-dim">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-14">
           {/* Logo / Name */}
@@ -64,7 +64,7 @@ export function Header() {
                   {isActive && (
                     <motion.div
                       layoutId="activeTab"
-                      className="absolute inset-0 bg-matrix-green/10 border border-matrix-green/30 rounded -z-10"
+                      className="absolute inset-0 bg-matrix-green/10 border border-matrix-green/30 rounded-sm -z-10"
                       transition={{ type: 'spring', duration: 0.5 }}
                     />
                   )}
